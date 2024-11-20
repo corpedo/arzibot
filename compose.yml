@@ -1,0 +1,6 @@
+services:
+  arzibot:
+    build: 
+      context: ./
+    environment:
+      - ARZIBOT_TOKEN=
