@@ -10,6 +10,6 @@ RUN mvn -f pom.xml clean package -DskipTests
 
 FROM eclipse-temurin:21-alpine
 
-COPY --from=builder /workspace/target/*.jar arzibot.jar
+COPY --from=builder /workspace/target/*-jar-with-dependencies.jar arzibot.jar
 
 ENTRYPOINT ["java","-jar","arzibot.jar"]

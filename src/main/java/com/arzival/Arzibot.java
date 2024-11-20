@@ -17,7 +17,7 @@ public class Arzibot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return System.getEnv("ARZIBOT_TOKEN");;
+        return System.getenv("ARZIBOT_TOKEN");
     }
 
     @Override
@@ -33,12 +33,12 @@ public class Arzibot extends TelegramLongPollingBot {
 
     public void sendText(Long who, String what){
         SendMessage sm = SendMessage.builder()
-                .chatId(who.toString()) //Who are we sending a message to
-                .text(what).build();    //Message content
+                .chatId(who.toString())
+                .text(what).build();
         try {
-            execute(sm);                        //Actually sending the message
+            execute(sm);
         } catch (TelegramApiException e) {
-            throw new RuntimeException(e);      //Any error will be printed here
+            throw new RuntimeException(e);
         }
     }
 
