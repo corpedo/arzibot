@@ -71,7 +71,7 @@ public class Arzibot extends TelegramLongPollingBot {
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
 
-        OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient("f7ef0976d52faa01bdb06ee90745fa8f");
+        OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient(System.getenv("OPEN_WEATHER_TOKEN"));
 
         Weather weather = openWeatherClient
                 .currentWeather()
