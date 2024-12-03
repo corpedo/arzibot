@@ -1,0 +1,14 @@
+services:
+  gemini-service:
+    build: 
+      context: ./gemini-service
+    environment:
+      - GEMINI_TOKEN=
+    ports: 
+      - 3000:3000
+  telegram-service:
+    build: 
+      context: ./telegram-service
+    environment:
+      - ARZIBOT_TOKEN=
+      - OPEN_WEATHER_TOKEN=
